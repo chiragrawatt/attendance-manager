@@ -36,6 +36,11 @@ const routes: Routes = [
   {
     path: "chart",
     component: ChartComponent
+  },
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: "full"
   }
 ];
 
