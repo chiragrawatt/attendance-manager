@@ -1,0 +1,17 @@
+section {
+    div {
+        &:hover {
+            background: #f2f2f2;
+        }
+    }
+}
+
+span {
+    font-size: 1.1rem;
+}
+
+.nav-active {
+    background-color: #e6e6e6;
+    font-weight: 500;
+    color: #3c4caa;
+}

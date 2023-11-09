@@ -1,0 +1,4 @@
+<section class="m-5">
+    <app-loader *ngIf="student==null"></app-loader>
+    <app-student-form *ngIf="student!=null" [handleSubmit]="updateStudent" [formData]="formData"></app-student-form>
+</section>

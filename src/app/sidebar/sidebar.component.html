@@ -1,0 +1,6 @@
+<section>
+    <div class="d-flex align-items-center px-4 py-3 rounded-0 btn" *ngFor="let data of navData" [routerLink]="data.path" routerLinkActive="nav-active">
+        <mat-icon color="primary">{{data.icon}}</mat-icon>
+        <span class="ms-2">{{data.title}}</span>
+    </div>
+</section>

@@ -1,0 +1,4 @@
+<section class="m-5">
+    <app-loader *ngIf="isLoading"></app-loader>
+    <app-student-form *ngIf="!isLoading" [handleSubmit]="saveStudent" [formData]="formData"></app-student-form>
+</section>

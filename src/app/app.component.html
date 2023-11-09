@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="ms-2">Attendance Manager</span>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav opened position="start">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-content></app-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

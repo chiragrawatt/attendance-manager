@@ -1,0 +1,1 @@
+export const DISPLAYED_COLUMNS = ["rollNo", "name", "email", "phone", "actions"];

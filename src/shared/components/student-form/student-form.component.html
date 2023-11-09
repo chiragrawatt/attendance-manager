@@ -1,0 +1,31 @@
+<mat-card class="example-card">
+    <mat-card-header class="d-flex flex-column align-items-center">
+        <mat-card-title>{{formData.title}}</mat-card-title>
+        <mat-card-subtitle>{{formData.subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+        <mat-card-content  class="d-flex flex-column m-3">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input formControlName="name" matInput>
+                <mat-error *ngIf="studentForm.get('name')?.invalid">Name cannot be empty</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Roll Number</mat-label>
+                <input [disabled]="false" formControlName="rollNo" matInput type="number">
+                <mat-error *ngIf="studentForm.get('rollNo')?.invalid">Roll number must be a 3 digit number or it already exists</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput type="email">
+                <mat-error *ngIf="studentForm.get('email')?.invalid">Email is not valid</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input formControlName="phone" matInput>
+                <mat-error *ngIf="studentForm.get('phone')?.invalid">Phone number must be a 10 digit number</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="inline" [disabled]="studentForm.invalid">{{formData.buttonText}}</button>
+        </mat-card-content>
+    </form>
+  </mat-card>
