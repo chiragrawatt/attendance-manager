@@ -23,11 +23,14 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   constructor(private studentService: StudentService, private router: Router) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.studentService.students.subscribe((data => {
-      this.isLoading = false;
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1000);
     }))
 
     this.studentService.fetchAllStudents();
@@ -61,13 +64,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     })
   }
 
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 }
 1

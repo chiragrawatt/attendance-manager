@@ -19,6 +19,7 @@ export class StudentService {
     this.http.get<IStudent[]>(`${API_URL}/student`)
     .subscribe({
       next: res => {
+        console.log(res);
         this.students.next(res);
       },
       error: err => console.log('error', err)

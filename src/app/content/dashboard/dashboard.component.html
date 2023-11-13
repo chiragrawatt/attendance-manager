@@ -1,10 +1,10 @@
 <section class="m-4">
     <app-loader *ngIf="isLoading"></app-loader>
 
-    <!-- <mat-form-field *ngIf="!isLoading">
+    <mat-form-field *ngIf="!isLoading">
         <mat-label>Filter Students</mat-label>
         <input matInput (keyup)="applyFilter($event)" #input>
-    </mat-form-field> -->
+    </mat-form-field>
     <div class="mat-elevation-z8" *ngIf="!isLoading">
         <table mat-table [dataSource]="dataSource" matSort>
 
